@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>css开发中常用代码段</title>
+    <link href="/2021/08/31/css%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%AE%B5/"/>
+    <url>/2021/08/31/css%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%AE%B5/</url>
+    
+    <content type="html"><![CDATA[<h2 id="css-开发中常用代码段"><a href="#css-开发中常用代码段" class="headerlink" title="css 开发中常用代码段"></a>css 开发中常用代码段</h2><h3 id="超出显示省略号"><a href="#超出显示省略号" class="headerlink" title="超出显示省略号"></a><strong>超出显示省略号</strong></h3><h4 id="单行显示省略号"><a href="#单行显示省略号" class="headerlink" title="单行显示省略号"></a>单行显示省略号</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">overflow</span>:hidden;<br><span class="hljs-attribute">text-overflow</span>:ellipsis;<br><span class="hljs-attribute">white-space</span>:nowrap;<br></code></pre></td></tr></table></figure><h4 id="多行显示省略号"><a href="#多行显示省略号" class="headerlink" title="多行显示省略号"></a>多行显示省略号</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">text-overflow</span>: ellipsis; <br><span class="hljs-attribute">display</span>: -webkit-box;<br>-webkit-box-orient: vertical;<br>-webkit-line-clamp: n; // n代表行数<br><span class="hljs-attribute">overflow</span>: hidden;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>css</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>css</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Javascript内置的可迭代对象</title>
+    <link href="/2021/08/31/Javascript%E5%86%85%E7%BD%AE%E7%9A%84%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/"/>
+    <url>/2021/08/31/Javascript%E5%86%85%E7%BD%AE%E7%9A%84%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="js内置的可迭代对象"><a href="#js内置的可迭代对象" class="headerlink" title="js内置的可迭代对象"></a>js内置的可迭代对象</h3><blockquote><p>ES6中引入了迭代器和可迭代对象，并提出对迭代对象的支持（for···of循环、Map(iterable)构造器等···）</p><p>也就是说一个数据结构只要具有symbol.iterator属性，就可以认为是可迭代的(iterable)</p><p>因此 js可迭代对象有：<code>Array</code>、<code>Map</code>、<code>Set</code>、<code>String</code>、<code>Typed Array</code>、<code>函数的arguements</code>、<code>NodeList对象</code></p></blockquote><h4 id="数组Arrays"><a href="#数组Arrays" class="headerlink" title="数组Arrays"></a>数组Arrays</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-attr">[]</span><span class="hljs-selector-attr">[Symbol.iterator]</span>)<br> <br><span class="hljs-function"><span class="hljs-title">for</span><span class="hljs-params">(let x of [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>])</span></span><br>  console<span class="hljs-selector-class">.log</span>(x)<br></code></pre></td></tr></table></figure><h4 id="字符串Strings"><a href="#字符串Strings" class="headerlink" title="字符串Strings"></a>字符串Strings</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus">console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">&quot;&quot;</span><span class="hljs-selector-attr">[Symbol.iterator]</span>)<br><span class="hljs-function"><span class="hljs-title">for</span><span class="hljs-params">(let x of <span class="hljs-string">&quot;abc&quot;</span>)</span></span><br>  console<span class="hljs-selector-class">.log</span>(x)<br></code></pre></td></tr></table></figure><h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp">let map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>().<span class="hljs-built_in">set</span>(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-number">1</span>).<span class="hljs-built_in">set</span>(<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-number">2</span>);<br>console.<span class="hljs-built_in">log</span>(map[Symbol.iterator]);<br><span class="hljs-keyword">for</span> (let pair of map) &#123;<br>  console.<span class="hljs-built_in">log</span>(pair);<br>&#125;<br></code></pre></td></tr></table></figure><h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros">let <span class="hljs-builtin-name">set</span> = new <span class="hljs-builtin-name">Set</span>().<span class="hljs-builtin-name">add</span>(<span class="hljs-string">&#x27;a&#x27;</span>).<span class="hljs-builtin-name">add</span>(<span class="hljs-string">&#x27;b&#x27;</span>);<br><span class="hljs-keyword">for</span> (let x of set) &#123;<br>  console.log(x);<br>&#125;<br></code></pre></td></tr></table></figure><h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printArgs</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x <span class="hljs-keyword">of</span> <span class="hljs-built_in">arguments</span>) &#123;<br>    <span class="hljs-built_in">console</span>.log(x);<br>  &#125;<br>&#125;<br>printArgs(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>);<br></code></pre></td></tr></table></figure><h4 id="Typed-Arrays"><a href="#Typed-Arrays" class="headerlink" title="Typed Arrays"></a>Typed Arrays</h4><h4 id="Generators，ES6新增加"><a href="#Generators，ES6新增加" class="headerlink" title="Generators，ES6新增加"></a>Generators，ES6新增加</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>js</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>ES6</tag>
+      
+      <tag>iterator</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数组、对象、字符串常见方法</title>
     <link href="/2021/08/01/%E6%95%B0%E7%BB%84%E3%80%81%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/"/>
     <url>/2021/08/01/%E6%95%B0%E7%BB%84%E3%80%81%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/</url>
@@ -13,8 +67,6 @@
     
     <categories>
       
-      <category>web前端</category>
-      
       <category>js</category>
       
     </categories>
@@ -22,26 +74,11 @@
     
     <tags>
       
-      <tag>web前端</tag>
-      
       <tag>js</tag>
       
       <tag>数组</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2021/07/30/hello-world/"/>
-    <url>/2021/07/30/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
     
   </entry>
   
