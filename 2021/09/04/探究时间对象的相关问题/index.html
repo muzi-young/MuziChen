@@ -18,7 +18,7 @@
   <meta name="author" content="大志">
   <meta name="keywords" content="">
   
-  <title>css开发中常用代码段 - 大志の博客</title>
+  <title>探究时间对象的相关问题 - 大志の博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -151,7 +151,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="css开发中常用代码段">
+            <span class="h2" id="subtitle" title="探究时间对象的相关问题">
               
             </span>
 
@@ -161,8 +161,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-31 18:11" pubdate>
-        2021年8月31日 晚上
+      <time datetime="2021-09-04 16:53" pubdate>
+        2021年9月4日 下午
       </time>
     </span>
   
@@ -173,7 +173,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      58 字
+      621 字
     </span>
   
 
@@ -183,7 +183,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      8
        分钟
     </span>
   
@@ -213,12 +213,61 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">css开发中常用代码段</h1>
+            <h1 style="display: none">探究时间对象的相关问题</h1>
             
             <div class="markdown-body">
-              <h2 id="css-开发中常用代码段"><a href="#css-开发中常用代码段" class="headerlink" title="css 开发中常用代码段"></a>css 开发中常用代码段</h2><h3 id="超出显示省略号"><a href="#超出显示省略号" class="headerlink" title="超出显示省略号"></a><strong>超出显示省略号</strong></h3><h4 id="单行显示省略号"><a href="#单行显示省略号" class="headerlink" title="单行显示省略号"></a>单行显示省略号</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">overflow</span>:hidden;<br><span class="hljs-attribute">text-overflow</span>:ellipsis;<br><span class="hljs-attribute">white-space</span>:nowrap;<br></code></pre></td></tr></table></figure>
+              <h2 id="时间对象Date"><a href="#时间对象Date" class="headerlink" title="时间对象Date()"></a>时间对象Date()</h2><blockquote>
+<p>创建一个新的<code>Date</code>对象的唯一方法就是通过<code>new</code>操作符。</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">let <span class="hljs-keyword">new</span><span class="hljs-type">Date</span> = <span class="hljs-keyword">new</span> <span class="hljs-type">Date</span>();<br></code></pre></td></tr></table></figure>
 
-<h4 id="多行显示省略号"><a href="#多行显示省略号" class="headerlink" title="多行显示省略号"></a>多行显示省略号</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">text-overflow</span>: ellipsis; <br><span class="hljs-attribute">display</span>: -webkit-box;<br>-webkit-box-orient: vertical;<br>-webkit-line-clamp: n; // n代表行数<br><span class="hljs-attribute">overflow</span>: hidden;<br></code></pre></td></tr></table></figure>
+<p><strong>注意</strong>：如果只是作为常规函数调用，而不加new操作符，返回的只是字符串，不是一个时间对象了。</p>
+</blockquote>
+<h3 id="Date-构造函数有四种形式："><a href="#Date-构造函数有四种形式：" class="headerlink" title="Date()构造函数有四种形式："></a><code>Date()</code>构造函数有四种形式：</h3><blockquote>
+<p>1.没有参数 <code>new Date()</code></p>
+<p>如果没有提供参数，那么新创建的时间代表当前的时间。</p>
+<p>2.Unix时间戳 <code>new Date(value)</code></p>
+<p>value是int类型的，表示自1970年1月1日00:00:00 UTC以来的毫秒数。</p>
+<p>3.时间戳字符串 <code>new Date(dateString)</code></p>
+<p>表示日期的字符串值。</p>
+</blockquote>
+<h3 id="Date-的方法"><a href="#Date-的方法" class="headerlink" title="Date()的方法"></a><code>Date()</code>的方法</h3><h4 id="Date-prototype-getDate"><a href="#Date-prototype-getDate" class="headerlink" title="Date.prototype.getDate()"></a><em><code>Date.prototype.getDate()</code></em></h4><blockquote>
+<p>*<code>getDate()</code>*返回一个指定的日期对象为一个月中的具体哪一天</p>
+</blockquote>
+<h4 id="Date-prototype-getDay"><a href="#Date-prototype-getDay" class="headerlink" title="Date.prototype.getDay()"></a><code>Date.prototype.getDay()</code></h4><blockquote>
+<p>**<code>getDay()</code>**返回一个具体日期中一周的第几天，0 表示星期天。对于某个月中的第几天</p>
+</blockquote>
+<h4 id="Date-prototype-getFullYear"><a href="#Date-prototype-getFullYear" class="headerlink" title="Date.prototype.getFullYear()"></a><em><code>Date.prototype.getFullYear()</code></em></h4><blockquote>
+<p><strong><code>getFullYear()</code></strong> 方法根据本地时间返回指定日期的年份。</p>
+</blockquote>
+<h4 id="Date-prototype-getMonth"><a href="#Date-prototype-getMonth" class="headerlink" title="Date.prototype.getMonth()"></a><em><code>Date.prototype.getMonth()</code></em></h4><blockquote>
+<p>返回一个指定的日期对象的月份，为基于0的值（0表示一年中的第一月）,所以需要月份+1</p>
+</blockquote>
+<h4 id="Date-prototype-getHours"><a href="#Date-prototype-getHours" class="headerlink" title="Date.prototype.getHours()"></a><em><code>Date.prototype.getHours()</code></em></h4><blockquote>
+<p><strong><code>getHours()</code></strong> 返回一个指定的日期对象的小时。</p>
+</blockquote>
+<h4 id="Date-prototype-getMinutes"><a href="#Date-prototype-getMinutes" class="headerlink" title="Date.prototype.getMinutes()"></a><em><code>Date.prototype.getMinutes()</code></em></h4><blockquote>
+<p>**<code>getMinutes()</code>**返回一个指定的日期对象的分钟数。</p>
+</blockquote>
+<h4 id="Date-prototype-getSeconds"><a href="#Date-prototype-getSeconds" class="headerlink" title="Date.prototype.getSeconds()"></a><em><code>Date.prototype.getSeconds()</code></em></h4><blockquote>
+<p><strong><code>getSeconds()</code></strong> 返回一个指定的日期对象的秒数。</p>
+</blockquote>
+<h4 id="Date-prototype-getTime"><a href="#Date-prototype-getTime" class="headerlink" title="Date.prototype.getTime()"></a><em><code>Date.prototype.getTime()</code></em></h4><blockquote>
+<p><code>**getTime()**</code> 将时间转成时间戳</p>
+</blockquote>
+<h3 id="时间戳和时间格式的互转"><a href="#时间戳和时间格式的互转" class="headerlink" title="时间戳和时间格式的互转"></a>时间戳和时间格式的互转</h3><p>1.时间戳转成时间格式【以’-‘分割的字符串】</p>
+<ul>
+<li>只取year-Month-Day</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">timestampToTime</span>(<span class="hljs-params">timestamp,current</span>) </span>&#123;<br>    <span class="hljs-keyword">if</span>(current)&#123;<br>        <span class="hljs-comment">//时间戳为10位需*1000，时间戳为13位的话不需乘1000</span><br>         <span class="hljs-keyword">var</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(timestamp); <br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">var</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(timestamp * <span class="hljs-number">1000</span>); <br>    &#125;<br>    <span class="hljs-keyword">var</span> Y = date.getFullYear() + <span class="hljs-string">&#x27;-&#x27;</span>;<br>    <span class="hljs-keyword">var</span> M = (date.getMonth() + <span class="hljs-number">1</span> &lt; <span class="hljs-number">10</span> ? <span class="hljs-string">&#x27;0&#x27;</span> + (date.getMonth() + <span class="hljs-number">1</span>) : date.getMonth() + <span class="hljs-number">1</span>) + <span class="hljs-string">&#x27;-&#x27;</span>;<br>    <span class="hljs-keyword">var</span> D = change(date.getDate()) + <span class="hljs-string">&#x27; &#x27;</span>;<br>    <span class="hljs-keyword">return</span> Y + M + D;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>包括hour-minute-second</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatDateTime</span>(<span class="hljs-params">time</span>) </span>&#123;<br>    <span class="hljs-keyword">var</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(time);<br>    <span class="hljs-keyword">var</span> y = date.getFullYear();<br>    <span class="hljs-keyword">var</span> m = date.getMonth() + <span class="hljs-number">1</span>;<br>    m = m &lt; <span class="hljs-number">10</span> ? (<span class="hljs-string">&#x27;0&#x27;</span> + m) : m;<br>    <span class="hljs-keyword">var</span> d = date.getDate();<br>    d = d &lt; <span class="hljs-number">10</span> ? (<span class="hljs-string">&#x27;0&#x27;</span> + d) : d;<br>    <span class="hljs-keyword">var</span> h = date.getHours();<br>    h = h &lt; <span class="hljs-number">10</span> ? (<span class="hljs-string">&#x27;0&#x27;</span> + h) : h;<br>    <span class="hljs-keyword">var</span> minute = date.getMinutes();<br>    <span class="hljs-keyword">var</span> second = date.getSeconds();<br>    minute = minute &lt; <span class="hljs-number">10</span> ? (<span class="hljs-string">&#x27;0&#x27;</span> + minute) : minute;<br>    second = second &lt; <span class="hljs-number">10</span> ? (<span class="hljs-string">&#x27;0&#x27;</span> + second) : second;<br>    <span class="hljs-keyword">return</span> y + <span class="hljs-string">&#x27;-&#x27;</span> + m + <span class="hljs-string">&#x27;-&#x27;</span> + d+<span class="hljs-string">&#x27; &#x27;</span>+h+<span class="hljs-string">&#x27;:&#x27;</span>+minute+<span class="hljs-string">&#x27;:&#x27;</span>+second;<br>&#125;;<br><span class="hljs-comment">// 调用方法</span><br>formatDateTime(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>())<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>2.时间格式转成时间戳</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">方法<span class="hljs-number">1</span>：<br><span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime();<br>方法<span class="hljs-number">2</span>：<br><span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().valueOf();<br>方法<span class="hljs-number">3</span>：<br><span class="hljs-built_in">Date</span>.parse(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>());<br>第三种方法只能精确到秒，前两种方法可以精确到毫秒<br></code></pre></td></tr></table></figure>
+
+
             </div>
             <hr>
             <div>
@@ -227,7 +276,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/CSS/">CSS</a>
+                      <a class="hover-with-bg" href="/categories/Javascript/">Javascript</a>
                     
                   </div>
                 
@@ -235,7 +284,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/css/">css</a>
+                      <a class="hover-with-bg" href="/tags/js/">js</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AF%B9%E8%B1%A1/">对象</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
                     
                   </div>
                 
@@ -252,9 +305,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/03/Typescript%E4%B8%8EJavascript%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C%EF%BC%9F/">
+                      <a href="/2021/09/05/vue%E9%9D%A2%E8%AF%95%E9%A2%98/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Typescript与Javascript有何不同？</span>
+                        <span class="hidden-mobile">vue面试题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -262,8 +315,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/31/Javascript%E5%86%85%E7%BD%AE%E7%9A%84%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/">
-                        <span class="hidden-mobile">Javascript内置的可迭代对象</span>
+                      <a href="/2021/09/03/Typescript%E4%B8%8EJavascript%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C%EF%BC%9F/">
+                        <span class="hidden-mobile">Typescript与Javascript有何不同？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
